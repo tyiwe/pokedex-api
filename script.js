@@ -30,6 +30,12 @@ async function buscarPokemon(nome) {
   }
 }
 
+function mostrarImagem(id, url, texto) {
+  const imagem = document.getElementById(id); 
+  imagem.src = url;   
+  imagem.alt = texto; 
+}
+
 function mostrarPokemon(data) {
   document.getElementById("pokemonNome").textContent = data.name;
   document.getElementById("pokemonId").textContent = data.id;
@@ -38,9 +44,9 @@ function mostrarPokemon(data) {
     .map(item => item.type.name)
     .join(", ");
 
-  const imagem = document.getElementById("pokemonImage");
-  imagem.src = data.sprites.front_default;
-  imagem.alt = `Sprite do ${data.name}`;
+  mostrarImagem("pokemonImage", data.sprites.front_default, `Frente do ${data.name}`);
+  mostrarImagem("pokemonImageCostas", data.sprites.back_default, `Costas do ${data.name}`);
 
   card.hidden = false;
+
 }

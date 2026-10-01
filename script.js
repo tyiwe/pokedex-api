@@ -46,7 +46,7 @@ function mostrarPokemon(data) {
 
   mostrarImagem("pokemonImage", data.sprites.front_default, `Frente do ${data.name}`);
   mostrarImagem("pokemonImageCostas", data.sprites.back_default, `Costas do ${data.name}`);
-
+  mostrarImagem("pokemonImageShiny", data.sprites.front_shiny, `Frente shiny do ${data.name}`);
   card.hidden = false;
 
 }
